@@ -1,12 +1,12 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ inputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
-
   home.file.sshAllowedSigners = {
     enable = true;
     source = ../conf.d/allowed_signers;
@@ -29,7 +29,6 @@
       "npm-debug.log"
       "shell.nix"
     ];
-
 
     # Replaces aliases in ~/.gitconfig
     aliases = {
@@ -73,10 +72,9 @@
       gpg = {
         format = "ssh";
         program = "${pkgs.gnupg}/bin/gpg";
-        ssh =
-          {
-            allowedSignersFile = "~/.ssh/allowed_signers"; #don't love this but c'est la vie
-          };
+        ssh = {
+          allowedSignersFile = "~/.ssh/allowed_signers"; #don't love this but c'est la vie
+        };
       };
     };
   };
