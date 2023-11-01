@@ -25,6 +25,7 @@
     bash-prompt-prefix = "(nix:$name)\040";
     max-jobs = "auto";
     extra-nix-path = "nixpkgs=flake:nixpkgs";
+    auto-optimise-store = true;
   };
 
   # Create /etc/zshrc that loads the nix-darwin environment.
