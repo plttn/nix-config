@@ -67,6 +67,9 @@
       commit = {
         gpgSign = true;
       };
+      pull = {
+        rebase = false;
+      };
       gpg = {
         format = "ssh";
         program = "${pkgs.gnupg}/bin/gpg";
