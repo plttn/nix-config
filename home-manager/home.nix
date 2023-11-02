@@ -57,6 +57,13 @@
     homeDirectory = "/Users/jack";
   };
 
+  xdg = {
+    enable = true;
+    configFile."fish/completions/nix.fish".source = "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";
+    configFile."wezterm/wezterm.lua".source = ../conf.d/wezterm.lua;
+    configFile."ov/config.yaml".source = ../conf.d/ov.yaml;
+  };
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
@@ -79,26 +86,26 @@
     _1password
     ngrok
     dnscontrol
+    unstable.ov
+    unstable.less
     ffmpeg
     vivid
     ripgrep
     # unstable.atuin # double specified so overlay kicks in
     # gnupg
     direnv
+    (nerdfonts.override {fonts = ["Meslo" "Hermit"];})
   ];
 
   home.sessionVariables = {
     # EDITOR = "emacs";
     fish_greeting = "";
+    PAGER = "less";
   };
 
   home.sessionPath = ["$HOME/.bin"];
 
-  xdg = {
-    enable = true;
-    configFile."fish/completions/nix.fish".source = "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";
-    configFile."wezterm/wezterm.lua".source = ../conf.d/wezterm.lua;
-  };
+  fonts.fontconfig.enable = true;
 
   programs.zoxide.enable = true;
 
