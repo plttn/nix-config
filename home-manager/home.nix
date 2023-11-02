@@ -85,13 +85,13 @@
     fish
     _1password
     ngrok
-    dnscontrol
     unstable.ov
     unstable.less
     ffmpeg
     vivid
     ripgrep
     unstable.helix
+    unstable.nix-direnv
     # unstable.atuin # double specified so overlay kicks in
     # gnupg
     direnv
@@ -119,7 +119,9 @@
   programs.zoxide.enable = true;
   programs.direnv = {
     enable = true;
-    nix-direnv.enable = true;
+    nix-direnv = {
+      enable = true;
+    };
   };
 
   programs.fish = {
