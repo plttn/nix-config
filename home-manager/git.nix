@@ -53,6 +53,18 @@
       # list aliases
       la = "!git config -l | grep alias | cut -c 7-";
     };
+
+    delta.enable = true;
+    delta.options = {
+      decorations = {
+        commit-decoration-style = "bold yellow box ul";
+        file-decoration-style = "none";
+        file-style = "bold yellow ul";
+      };
+      features = "decorations";
+      whitespace-error-style = "22 reverse";
+    };
+
     extraConfig = {
       user = {
         signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHGminsJAXUJkc7TH7qHU6RNdZuMcWIwdx+zZCDpDiUG";

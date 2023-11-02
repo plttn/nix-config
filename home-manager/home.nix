@@ -81,6 +81,7 @@
     dnscontrol
     ffmpeg
     vivid
+    ripgrep
     # unstable.atuin # double specified so overlay kicks in
     # gnupg
     direnv
