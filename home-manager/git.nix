@@ -70,6 +70,9 @@
     };
 
     extraConfig = {
+      core = {
+        editor = "hx";
+      };
       user = {
         signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHGminsJAXUJkc7TH7qHU6RNdZuMcWIwdx+zZCDpDiUG";
       };

@@ -91,6 +91,7 @@
     ffmpeg
     vivid
     ripgrep
+    unstable.helix
     # unstable.atuin # double specified so overlay kicks in
     # gnupg
     direnv
@@ -106,6 +107,14 @@
   home.sessionPath = ["$HOME/.bin"];
 
   fonts.fontconfig.enable = true;
+
+  programs.helix = {
+    enable = true;
+    package = pkgs.unstable.helix;
+    settings = {
+      theme = "monokai_pro";
+    };
+  };
 
   programs.zoxide.enable = true;
   programs.direnv = {
