@@ -108,11 +108,18 @@
   fonts.fontconfig.enable = true;
 
   programs.zoxide.enable = true;
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   programs.fish = {
     enable = true;
     interactiveShellInit = "export LS_COLORS=\"$(vivid generate molokai)\"\n set --export fish_color_autosuggestion 555";
     shellInit = "eval \"$(/opt/homebrew/bin/brew shellenv)\"";
+    functions = {
+      dvd = "nix flake init --template github:the-nix-way/dev-templates#$argv[1]\n direnv allow";
+    };
   };
 
   programs.atuin = {
