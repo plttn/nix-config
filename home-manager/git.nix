@@ -57,9 +57,13 @@
     delta.enable = true;
     delta.options = {
       decorations = {
-        commit-decoration-style = "bold yellow box ul";
-        file-decoration-style = "none";
-        file-style = "bold yellow ul";
+        commit-decoration-style = "blue ol";
+        commit-style = "raw";
+        file-style = "omit";
+        hunk-header-decoration-style = "blue box";
+        hunk-header-file-style = "red";
+        hunk-header-line-number-style = "#067a00";
+        hunk-header-style = "file line-number syntax";
       };
       features = "decorations";
       whitespace-error-style = "22 reverse";
