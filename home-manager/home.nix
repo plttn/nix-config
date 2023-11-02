@@ -117,7 +117,7 @@
       show_preview = true;
       workspaces = true;
       # control_n_shortcuts = true;
-      enter_accept = true;
+      # enter_accept = true;
     };
   };
 
