@@ -92,8 +92,9 @@
     ripgrep
     unstable.helix
     unstable.nix-direnv
+    unstable.yubikey-manager
     # unstable.atuin # double specified so overlay kicks in
-    # gnupg
+    gnupg
     direnv
     (nerdfonts.override {fonts = ["Meslo" "Hermit"];})
   ];
@@ -160,6 +161,11 @@
   programs.ssh = {
     enable = true;
     extraConfig = "Host * \n IdentityAgent \"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
+  };
+
+  programs.gpg = {
+    enable = true;
+    settings = {};
   };
 
   # Enable home-manager and git
