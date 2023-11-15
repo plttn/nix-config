@@ -95,6 +95,7 @@
     unstable.yubikey-manager
     # unstable.atuin # double specified so overlay kicks in
     gnupg
+    htop
     direnv
     victor-mono
     (nerdfonts.override {fonts = ["Meslo" "Hermit"];})
