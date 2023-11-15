@@ -59,7 +59,7 @@
 
   xdg = {
     enable = true;
-    configFile."fish/completions/nix.fish".source = "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";
+    # configFile."fish/completions/nix.fish".source = "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";
     configFile."wezterm/wezterm.lua".source = ../conf.d/wezterm.lua;
     configFile."ov/config.yaml".source = ../conf.d/ov.yaml;
   };
