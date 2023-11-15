@@ -15,8 +15,8 @@ end
 -- For example, changing the color scheme:
 config.color_scheme = 'Brogrammer'
 
-config.font = wezterm.font('Berkeley Mono')
-config.harfbuzz_features = { 'ss02' }
+config.font = wezterm.font('CommitMono')
+config.harfbuzz_features = { 'calt=1' }
 config.font_size = 12
 config.hide_tab_bar_if_only_one_tab = true
 config.initial_cols = 110
@@ -25,10 +25,10 @@ front_end = 'WebGpu'
 config.default_cursor_style = 'SteadyBar'
 config.hide_mouse_cursor_when_typing = true
 config.visual_bell = {
-fade_in_function = 'EaseIn',
-fade_in_duration_ms = 150,
-fade_out_function = 'EaseOut',
-fade_out_duration_ms = 150,
+    fade_in_function = 'EaseIn',
+    fade_in_duration_ms = 150,
+    fade_out_function = 'EaseOut',
+    fade_out_duration_ms = 150,
 }
 config.colors = {
 visual_bell = '#202020',

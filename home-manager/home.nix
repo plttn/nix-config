@@ -96,6 +96,7 @@
     # unstable.atuin # double specified so overlay kicks in
     gnupg
     direnv
+    victor-mono
     (nerdfonts.override {fonts = ["Meslo" "Hermit"];})
   ];
 
