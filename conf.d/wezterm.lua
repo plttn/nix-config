@@ -17,7 +17,7 @@ config.color_scheme = 'Brogrammer'
 
 config.font = wezterm.font('Monaspace Neon Var')
 -- config.harfbuzz_features = { '' }
-config.font_size = 12
+config.font_size = 13
 config.hide_tab_bar_if_only_one_tab = true
 config.initial_cols = 110
 config.initial_rows = 30
