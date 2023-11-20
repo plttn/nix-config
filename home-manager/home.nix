@@ -93,11 +93,13 @@
     unstable.helix
     unstable.nix-direnv
     unstable.yubikey-manager
+    unstable.difftastic
     # unstable.atuin # double specified so overlay kicks in
     gnupg
     htop
     direnv
     victor-mono
+    unstable.commit-mono
     (nerdfonts.override {fonts = ["Meslo" "Hermit"];})
   ];
 

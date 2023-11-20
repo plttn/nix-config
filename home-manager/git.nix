@@ -54,7 +54,7 @@
       la = "!git config -l | grep alias | cut -c 7-";
     };
 
-    delta.enable = true;
+    delta.enable = false;
     delta.options = {
       decorations = {
         commit-decoration-style = "blue ol";
@@ -68,6 +68,10 @@
       features = "decorations";
       whitespace-error-style = "22 reverse";
     };
+    # difftastic = {
+    #   enable = false;
+    #   package = pkgs.unstable.difftastic;
+    # };
 
     extraConfig = {
       core = {
@@ -84,6 +88,9 @@
       };
       commit = {
         gpgSign = true;
+      };
+      diff = {
+        external = "difft";
       };
       pull = {
         rebase = false;
