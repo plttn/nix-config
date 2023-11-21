@@ -42,6 +42,20 @@
     casks = ["wezterm"];
   };
 
+  system.defaults = {
+    dock = {
+      magnification = true;
+      largesize = 80;
+    };
+    finder = {
+      ShowPathbar = true;
+      ShowStatusBar = true;
+    };
+    NSGlobalDomain = {
+      AppleInterfaceStyleSwitchesAutomatically = true;
+    };
+  };
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
