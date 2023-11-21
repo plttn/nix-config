@@ -32,9 +32,15 @@
   programs.zsh.enable = true; # default shell on catalina
   # programs.fish.enable = true;
   programs.fish.enable = true;
+
   programs.bash.enable = true;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  homebrew = {
+    enable = true;
+    casks = ["wezterm"];
+  };
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
