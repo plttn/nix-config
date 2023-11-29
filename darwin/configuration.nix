@@ -39,7 +39,7 @@
 
   homebrew = {
     enable = true;
-    casks = ["wezterm"];
+    casks = ["wezterm" "linearmouse"];
   };
 
   system.defaults = {
