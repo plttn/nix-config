@@ -88,7 +88,6 @@
     ffmpeg
     vivid
     ripgrep
-    rustup
     unstable.helix
     unstable.nix-direnv
     unstable.yubikey-manager

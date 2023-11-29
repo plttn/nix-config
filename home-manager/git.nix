@@ -34,7 +34,7 @@
     aliases = {
       dcom = "!f() { GIT_EXTERNAL_DIFF=difft git show HEAD --ext-diff; }; f";
       dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff; }; f";
-      dft = "difftool";
+      dfft = "difftool";
       ba = "branch -a";
       bd = "branch -D";
       br = "branch";
