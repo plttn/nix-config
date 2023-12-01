@@ -137,7 +137,7 @@
     interactiveShellInit = "export LS_COLORS=\"$(vivid generate molokai)\"\n set --export fish_color_autosuggestion 555";
     shellInit = "eval \"$(/opt/homebrew/bin/brew shellenv)\"";
     functions = {
-      dvd = "nix flake init --template github:the-nix-way/dev-templates#$argv[1]\n direnv allow";
+      dvd = "nix flake init --template github:plttn/dev-templates#$argv[1]\n direnv allow";
     };
   };
 
