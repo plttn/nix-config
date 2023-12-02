@@ -68,6 +68,7 @@
   # home.packages = with pkgs; [ steam ];
 
   home.packages = with pkgs; [
+    aoc-cli
     doggo
     bat
     nixpkgs-fmt
@@ -107,7 +108,7 @@
     PAGER = "less";
   };
 
-  home.sessionPath = ["$HOME/.bin"];
+  home.sessionPath = ["$HOME/.bin" "$HOME/.cargo/bin"];
 
   fonts.fontconfig.enable = true;
 
