@@ -1,6 +1,7 @@
-{ config
-, pkgs
-, ...
+{
+  config,
+  pkgs,
+  ...
 }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -38,7 +39,7 @@
 
   homebrew = {
     enable = true;
-    casks = [ "wezterm" "linearmouse" ];
+    casks = ["wezterm" "linearmouse"];
   };
 
   system.defaults = {

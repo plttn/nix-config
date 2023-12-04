@@ -1,11 +1,12 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{ inputs
-, outputs
-, lib
-, config
-, pkgs
-, ...
+{
+  inputs,
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
 }: {
   # You can import other home-manager modules here
   imports = [
@@ -101,7 +102,7 @@
     direnv
     victor-mono
     unstable.commit-mono
-    (nerdfonts.override { fonts = [ "Meslo" "Hermit" ]; })
+    (nerdfonts.override {fonts = ["Meslo" "Hermit"];})
   ];
 
   home.sessionVariables = {
@@ -110,7 +111,7 @@
     PAGER = "less";
   };
 
-  home.sessionPath = [ "$HOME/.bin" "$HOME/.cargo/bin" ];
+  home.sessionPath = ["$HOME/.bin" "$HOME/.cargo/bin"];
 
   fonts.fontconfig.enable = true;
 
@@ -175,7 +176,7 @@
 
   programs.gpg = {
     enable = true;
-    settings = { };
+    settings = {};
   };
 
   # Enable home-manager and git
