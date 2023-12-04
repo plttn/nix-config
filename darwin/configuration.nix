@@ -1,18 +1,12 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{ config, pkgs, ... }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.alejandra
-  ];
+  environment.systemPackages = [ pkgs.vim pkgs.alejandra ];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  environment.darwinConfig = "$HOME/.config/nix-config/darwin/configuration.nix";
+  environment.darwinConfig =
+    "$HOME/.config/nix-config/darwin/configuration.nix";
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
@@ -22,7 +16,7 @@
     experimental-features = "nix-command flakes repl-flake";
     # brought in from DetSys
     build-users-group = "nixbld";
-    bash-prompt-prefix = "(nix:$name)\040";
+    bash-prompt-prefix = "(nix:$name)040";
     max-jobs = "auto";
     extra-nix-path = "nixpkgs=flake:nixpkgs";
     auto-optimise-store = true;
@@ -39,7 +33,7 @@
 
   homebrew = {
     enable = true;
-    casks = ["wezterm" "linearmouse"];
+    casks = [ "wezterm" "linearmouse" ];
   };
 
   system.defaults = {
@@ -51,9 +45,7 @@
       ShowPathbar = true;
       ShowStatusBar = true;
     };
-    NSGlobalDomain = {
-      AppleInterfaceStyleSwitchesAutomatically = true;
-    };
+    NSGlobalDomain = { AppleInterfaceStyleSwitchesAutomatically = true; };
   };
 
   # Used for backwards compatibility, please read the changelog before changing.

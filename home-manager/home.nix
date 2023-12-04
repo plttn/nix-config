@@ -1,13 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  outputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -102,7 +95,7 @@
     direnv
     victor-mono
     unstable.commit-mono
-    (nerdfonts.override {fonts = ["Meslo" "Hermit"];})
+    (nerdfonts.override { fonts = [ "Meslo" "Hermit" ]; })
   ];
 
   home.sessionVariables = {
@@ -111,37 +104,33 @@
     PAGER = "less";
   };
 
-  home.sessionPath = ["$HOME/.bin" "$HOME/.cargo/bin"];
+  home.sessionPath = [ "$HOME/.bin" "$HOME/.cargo/bin" ];
 
   fonts.fontconfig.enable = true;
 
   programs.helix = {
     enable = true;
     package = pkgs.unstable.helix;
-    settings = {
-      theme = "monokai_pro";
-    };
+    settings = { theme = "monokai_pro"; };
   };
 
   programs.zoxide.enable = true;
   programs.direnv = {
     enable = true;
-    nix-direnv = {
-      enable = true;
-    };
-    config = {
-      global = {
-        warn_timeout = "30s";
-      };
-    };
+    nix-direnv = { enable = true; };
+    config = { global = { warn_timeout = "30s"; }; };
   };
 
   programs.fish = {
     enable = true;
-    interactiveShellInit = "export LS_COLORS=\"$(vivid generate molokai)\"\n set --export fish_color_autosuggestion 555";
-    shellInit = "eval \"$(/opt/homebrew/bin/brew shellenv)\"";
+    interactiveShellInit = ''
+      export LS_COLORS="$(vivid generate molokai)"
+       set --export fish_color_autosuggestion 555'';
+    shellInit = ''eval "$(/opt/homebrew/bin/brew shellenv)"'';
     functions = {
-      dvd = "nix flake init --template github:plttn/dev-templates#$argv[1]\n direnv allow";
+      dvd = ''
+        nix flake init --template github:plttn/dev-templates#$argv[1]
+         direnv allow'';
     };
   };
 
@@ -163,20 +152,20 @@
     enable = true;
     settings = {
       git_protocol = "ssh";
-      aliases = {
-        co = "pr checkout";
-      };
+      aliases = { co = "pr checkout"; };
     };
   };
 
   programs.ssh = {
     enable = true;
-    extraConfig = "Host * \n IdentityAgent \"~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
+    extraConfig = ''
+      Host * 
+       IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"'';
   };
 
   programs.gpg = {
     enable = true;
-    settings = {};
+    settings = { };
   };
 
   # Enable home-manager and git
@@ -184,9 +173,7 @@
   programs.git.enable = true;
 
   nix.package = pkgs.nix;
-  nix.settings = {
-    auto-optimise-store = true;
-  };
+  nix.settings = { auto-optimise-store = true; };
 
   programs.man.generateCaches = true;
 

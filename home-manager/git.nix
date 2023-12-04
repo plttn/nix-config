@@ -1,12 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  inputs,
-  lib,
-  config,
-  pkgs,
-  ...
-}: {
+{ inputs, lib, config, pkgs, ... }: {
   home.file.sshAllowedSigners = {
     enable = true;
     source = ../conf.d/allowed_signers;
@@ -49,7 +43,8 @@
       s = "status";
       pr = "pull --rebase";
       st = "status";
-      l = "log --graph --pretty='%Cred%h%Creset - %C(bold blue)<%an>%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)' --abbrev-commit --date=relative";
+      l =
+        "log --graph --pretty='%Cred%h%Creset - %C(bold blue)<%an>%Creset %s%C(yellow)%d%Creset %Cgreen(%cr)' --abbrev-commit --date=relative";
       whoops = "reset --hard";
       wipe = "commit -s";
       fix = "rebase --exec 'git commit --amend --no-edit -S' -i origin/develop";
@@ -77,43 +72,27 @@
     # };
 
     extraConfig = {
-      core = {
-        editor = "hx";
-      };
+      core = { editor = "hx"; };
       user = {
-        signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHGminsJAXUJkc7TH7qHU6RNdZuMcWIwdx+zZCDpDiUG";
+        signingKey =
+          "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHGminsJAXUJkc7TH7qHU6RNdZuMcWIwdx+zZCDpDiUG";
       };
-      init = {
-        defaultBranch = "main";
-      };
-      push = {
-        autoSetupRemote = "true";
-      };
-      commit = {
-        gpgSign = true;
-      };
-      diff = {
-        tool = "difftastic";
-      };
-      difftool = {
-        prompt = false;
-      };
-      difftool.difftastic = {
-        cmd = "difft \"$LOCAL\" \"$REMOTE\"";
-      };
+      init = { defaultBranch = "main"; };
+      push = { autoSetupRemote = "true"; };
+      commit = { gpgSign = true; };
+      diff = { tool = "difftastic"; };
+      difftool = { prompt = false; };
+      difftool.difftastic = { cmd = ''difft "$LOCAL" "$REMOTE"''; };
 
-      pager = {
-        difftool = true;
-      };
+      pager = { difftool = true; };
 
-      pull = {
-        rebase = false;
-      };
+      pull = { rebase = false; };
       gpg = {
         format = "ssh";
         program = "${pkgs.gnupg}/bin/gpg";
         ssh = {
-          allowedSignersFile = "~/.ssh/allowed_signers"; #don't love this but c'est la vie
+          allowedSignersFile =
+            "~/.ssh/allowed_signers"; # don't love this but c'est la vie
         };
       };
     };
