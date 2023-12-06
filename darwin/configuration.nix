@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = [ pkgs.vim pkgs.alejandra ];
+  environment.systemPackages = [ pkgs.vim ];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
@@ -18,6 +18,7 @@
     build-users-group = "nixbld";
     bash-prompt-prefix = "(nix:$name)040";
     max-jobs = "auto";
+
     extra-nix-path = "nixpkgs=flake:nixpkgs";
     auto-optimise-store = true;
   };

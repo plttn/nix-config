@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "@plttn's nix config";
 
   inputs = {
     # Nixpkgs
