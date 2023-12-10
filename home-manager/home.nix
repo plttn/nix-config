@@ -73,7 +73,6 @@
     gh
     nil
     nano
-    nixpkgs-fmt
     unstable.eza
     unstable.just
     openssh
@@ -84,6 +83,7 @@
     unstable.ov
     unstable.less
     ffmpeg
+    nixfmt
     vivid
     ripgrep
     unstable.helix

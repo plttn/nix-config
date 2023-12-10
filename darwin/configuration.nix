@@ -21,6 +21,7 @@
 
     extra-nix-path = "nixpkgs=flake:nixpkgs";
     auto-optimise-store = true;
+    trusted-users = [ "jack" ];
   };
 
   # Create /etc/zshrc that loads the nix-darwin environment.
@@ -37,6 +38,7 @@
     casks = [ "wezterm" "linearmouse" ];
   };
 
+  security.pam.enableSudoTouchIdAuth = true;
   system.defaults = {
     dock = {
       magnification = true;
@@ -52,4 +54,5 @@
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
+
 }
