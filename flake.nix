@@ -19,7 +19,8 @@
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    atuin-upstream.url = "github:atuinsh/atuin/v17.1.0";
+    atuin-upstream.url =
+      "github:atuinsh/atuin/v17.1.0"; # keep versioned as needed
 
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
