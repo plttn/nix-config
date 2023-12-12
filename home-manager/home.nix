@@ -137,7 +137,7 @@
 
   programs.atuin = {
     enable = true;
-    package = pkgs.unstable.atuin;
+    package = inputs.atuin-upstream.packages.aarch64-darwin.default;
     enableFishIntegration = true;
     settings = {
       filter_mode_shell_up_key_binding = "session";
