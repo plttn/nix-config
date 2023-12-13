@@ -86,6 +86,7 @@
     nixfmt
     vivid
     ripgrep
+    unstable.fastfetch
     unstable.helix
     unstable.nix-direnv
     unstable.yubikey-manager
