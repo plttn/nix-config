@@ -8,7 +8,7 @@
   environment.darwinConfig =
     "$HOME/.config/nix-config/darwin/configuration.nix";
 
-  environment.shells = [pkgs.fish pkgs.zsh];
+  environment.shells = [ pkgs.fish pkgs.zsh ];
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
