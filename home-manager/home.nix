@@ -4,7 +4,7 @@
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
-    # outputs.homeManagerModules.example
+    # outputs.homeManagerModules.fish-fix
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -174,8 +174,9 @@
   programs.home-manager.enable = true;
   programs.git.enable = true;
 
-  nix.package = pkgs.nix;
-  nix.settings = { auto-optimise-store = true; };
+  # specified through darwin-nix
+  # nix.package = pkgs.nix;
+  # nix.settings = { auto-optimise-store = true; };
 
   programs.man.generateCaches = true;
 

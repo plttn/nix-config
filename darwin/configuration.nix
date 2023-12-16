@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = [ pkgs.vim ];
@@ -8,9 +8,11 @@
   environment.darwinConfig =
     "$HOME/.config/nix-config/darwin/configuration.nix";
 
+  environment.shells = [pkgs.fish pkgs.zsh];
+
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
-  # nix.package = pkgs.nix;
+  nix.package = pkgs.nix;
 
   nix.settings = {
     experimental-features = "nix-command flakes repl-flake";
@@ -29,6 +31,21 @@
   # programs.fish.enable = true;
   programs.fish.enable = true;
 
+  programs.fish.loginShellInit = let
+    # This naive quoting is good enough in this case. There shouldn't be any
+    # double quotes in the input string, and it needs to be double quoted in case
+    # it contains a space (which is unlikely!)
+    dquote = str: ''"'' + str + ''"'';
+
+    makeBinPathList = map (path: path + "/bin");
+  in ''
+    fish_add_path --move --prepend --path ${
+      lib.concatMapStringsSep " " dquote
+      (makeBinPathList config.environment.profiles)
+    }
+    set fish_user_paths $fish_user_paths
+  '';
+
   programs.bash.enable = true;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -36,6 +53,12 @@
   homebrew = {
     enable = true;
     casks = [ "wezterm" "linearmouse" ];
+  };
+
+  users.users.jack = {
+    name = "jack";
+    home = "/Users/jack";
+    shell = pkgs.unstable.fish;
   };
 
   security.pam.enableSudoTouchIdAuth = true;

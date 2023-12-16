@@ -89,7 +89,16 @@
       };
       # Available through 'darwin-rebuild --flake .#hostname'
       darwinConfigurations."Jacks-MBP" = nix-darwin.lib.darwinSystem {
-        modules = [ ./darwin/configuration.nix ];
+        modules = [
+          ./darwin/configuration.nix
+          home-manager.darwinModules.home-manager
+          {
+            # home-manager.useGlobalPkgs = true;
+            # home-manager.useUserPackages = true;
+            home-manager.users.jack = import ./home-manager/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs outputs; };
+          }
+        ];
         # extraSpecialArgs = { inherit inputs outputs; };
 
         # extraSpecialArgs = {
