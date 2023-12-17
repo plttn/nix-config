@@ -82,6 +82,7 @@
     ngrok
     unstable.ov
     unstable.less
+    home-manager
     ffmpeg
     nixfmt
     vivid
