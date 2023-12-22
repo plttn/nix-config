@@ -59,6 +59,7 @@
     # configFile."fish/completions/nix.fish".source = "${pkgs.nix}/share/fish/vendor_completions.d/nix.fish";
     configFile."wezterm/wezterm.lua".source = ../conf.d/wezterm.lua;
     configFile."ov/config.yaml".source = ../conf.d/ov.yaml;
+    # configFile."fish/fish_plugins".source = ../conf.d/fish_plugins;
   };
 
   # Add stuff for your user as you see fit:
