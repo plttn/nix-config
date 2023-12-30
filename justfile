@@ -10,3 +10,7 @@ darwin-switch:
     darwin-rebuild switch --flake .#{{hostname}}
 darwin-build:
     darwin-rebuild switch --flake .#{{hostname}}
+
+update-fix:
+    sudo mv /etc/bashrc /etc/bashrc.before-darwin
+    sudo mv /etc/zshrc /etc/zshrc.before-darwin
