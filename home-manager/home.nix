@@ -140,7 +140,8 @@
 
   programs.atuin = {
     enable = true;
-    package = inputs.atuin-upstream.packages.${pkgs.system}.default;
+    # package = inputs.atuin-upstream.packages.${pkgs.system}.default; #upstream
+    package = pkgs.unstable.atuin;
     enableFishIntegration = true;
     settings = {
       filter_mode_shell_up_key_binding = "session";
