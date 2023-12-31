@@ -77,7 +77,7 @@
 
   homebrew = {
     enable = true;
-    casks = [ "wezterm" "linearmouse" ];
+    casks = [ "wezterm" ];
   };
 
   users.users.jack = {
