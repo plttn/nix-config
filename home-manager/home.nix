@@ -93,6 +93,7 @@
     unstable.nix-direnv
     unstable.yubikey-manager
     unstable.difftastic
+    unstable.zellij
     # unstable.atuin # double specified so overlay kicks in
     gnupg
     htop
