@@ -131,7 +131,12 @@
     interactiveShellInit = ''
       export LS_COLORS="$(vivid generate molokai)"
        set --export fish_color_autosuggestion 555'';
-    shellInit = ''eval "$(/opt/homebrew/bin/brew shellenv)"'';
+    shellInit = ''
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    if type -q asdf
+      source /opt/homebrew/opt/asdf/libexec/asdf.fish
+    end
+    '';
     functions = {
       dvd = ''
         nix flake init --template github:plttn/dev-templates#$argv[1]
